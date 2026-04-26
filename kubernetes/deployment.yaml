@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: finedge-api
-          image: omeranwar/finedge-api:latest
+          image: omeranwar/finedge-api:b1cf648271eb1c5f05817e748bca96caf9c29e83
           ports:
             - containerPort: 3000
           env:
