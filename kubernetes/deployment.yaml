@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finedge-api
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: finedge-api
+  template:
+    metadata:
+      labels:
+        app: finedge-api
+    spec:
+      containers:
+        - name: finedge-api
+          image: omeranwar/finedge-api:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_VERSION
+              value: "1.0.0"
